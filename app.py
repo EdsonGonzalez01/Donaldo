@@ -2,55 +2,104 @@ import streamlit as st
 import pandas as pd
 from io import BytesIO
 
-st.set_page_config(page_title="Actualizaciones TFJA", layout="wide")
+st.set_page_config(page_title="Actualizaciones TFJA y TJAJAL", layout="wide")
+st.title("📄 Buscador de Actualizaciones por Fecha")
+st.caption("Filtra y visualiza actualizaciones por tribunal de forma independiente")
 
-st.title("📄 Buscador de Actualizaciones TFJA por Fecha")
-st.caption("Selecciona una fecha para ver actualizaciones de expedientes")
-
-# Cargar datos
+# 📂 Cargar archivos
 @st.cache_data
-def cargar_datos():
-    df = pd.read_csv("files/actualizaciones_expedientes.csv")
-    df.columns = [col.strip().replace("  ", " ") for col in df.columns]
-    df["Fecha de publicación"] = pd.to_datetime(df["Fecha de publicación"], dayfirst=True, errors="coerce")
+def cargar_tjajal():
+    df = pd.read_csv("files/actualizaciones_expedientes_tjajal.csv")
+
+    # Limpiar nombres de columnas
+    df.columns = (
+        df.columns
+        .str.strip()
+        .str.lower()
+        .str.replace("á", "a")
+        .str.replace("é", "e")
+        .str.replace("í", "i")
+        .str.replace("ó", "o")
+        .str.replace("ú", "u")
+        .str.replace("ñ", "n")
+        .str.replace("  ", " ")
+        .str.replace(" ", "_")
+    )
+
+    # Convertir fecha_acuerdo a datetime
+    df["fecha_acuerdo"] = pd.to_datetime(df["fecha_acuerdo"], errors="coerce", dayfirst=True)
     return df
 
-df = cargar_datos()
+@st.cache_data
+def cargar_tfja():
+    df = pd.read_csv("files/actualizaciones_expedientes_tfja.csv")
 
-# Selector de fecha
+    # Limpiar nombres de columnas
+    df.columns = (
+        df.columns
+        .str.strip()
+        .str.lower()
+        .str.replace("á", "a")
+        .str.replace("é", "e")
+        .str.replace("í", "i")
+        .str.replace("ó", "o")
+        .str.replace("ú", "u")
+        .str.replace("ñ", "n")
+        .str.replace("  ", " ")
+        .str.replace(" ", "_")
+    )
+
+    # Renombrar y convertir fecha de publicación
+    if "fecha_de_publicacion" in df.columns:
+        df.rename(columns={"fecha_de_publicacion": "fecha_publicacion"}, inplace=True)
+
+    df["fecha_publicacion"] = pd.to_datetime(df["fecha_publicacion"], errors="coerce", dayfirst=True)
+    return df
+
+df_tjajal = cargar_tjajal()
+df_tfja = cargar_tfja()
+
+# 🔍 Selector de fecha
 fecha = st.date_input("Selecciona una fecha")
-df_filtrado = df[df["Fecha de publicación"] == pd.to_datetime(fecha)]
 
-st.markdown(f"### Resultados para: {fecha.strftime('%d-%m-%Y')} ({len(df_filtrado)} encontrados)")
+# 📘 TJAJAL
+st.subheader("📘 TJAJAL (filtrado por fecha de acuerdo)")
+tjajal_filtrado = df_tjajal[df_tjajal["fecha_acuerdo"].dt.date == fecha]
 
-# Mostrar en expanders
-if df_filtrado.empty:
-    st.info("No se encontraron resultados para esa fecha.")
+if not tjajal_filtrado.empty:
+    st.dataframe(tjajal_filtrado)
 else:
-    for _, row in df_filtrado.iterrows():
-        with st.expander(f"📁 {row['No. expediente']} - {row['Fecha de publicación'].date()}"):
-            st.markdown(f"""
-**Parte actora:** {row['Parte actora']}  
-**Demandada:** {row['Parte demandada']}  
-**Notificada:** {row['Parte notificada']}  
-**Sala:** {row['Sala']}  
-**Magistrado:** {row['Magistrado']}  
-**Secretario:** {row['Secretario']}  
-**Síntesis:**  {row['Síntesis']}
-""")
+    st.info("No hay resultados para TJAJAL en esa fecha.")
 
-# Opción de descarga a Excel
-def convertir_a_excel(df):
+# 📙 TFJA
+st.subheader("📙 TFJA (filtrado por fecha de publicación)")
+tfja_filtrado = df_tfja[df_tfja["fecha_publicacion"].dt.date == fecha]
+
+if not tfja_filtrado.empty:
+    st.dataframe(tfja_filtrado)
+else:
+    st.info("No hay resultados para TFJA en esa fecha.")
+
+# 🔽 Función de exportación
+def exportar_excel(df):
     output = BytesIO()
     with pd.ExcelWriter(output, engine="xlsxwriter") as writer:
         df.to_excel(writer, index=False, sheet_name="Resultados")
     return output.getvalue()
 
-if not df_filtrado.empty:
-    excel_data = convertir_a_excel(df_filtrado)
+# ⬇️ Botones de descarga
+if not tjajal_filtrado.empty:
     st.download_button(
-        label="⬇️ Descargar resultados en Excel",
-        data=excel_data,
-        file_name=f"actualizaciones_{fecha.strftime('%Y-%m-%d')}.xlsx",
+        label="⬇️ Descargar TJAJAL",
+        data=exportar_excel(tjajal_filtrado),
+        file_name=f"tjajal_{fecha.strftime('%Y-%m-%d')}.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
+
+if not tfja_filtrado.empty:
+    st.download_button(
+        label="⬇️ Descargar TFJA",
+        data=exportar_excel(tfja_filtrado),
+        file_name=f"tfja_{fecha.strftime('%Y-%m-%d')}.xlsx",
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
