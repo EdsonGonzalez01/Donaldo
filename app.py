@@ -10,7 +10,7 @@ st.caption("Selecciona una fecha para ver actualizaciones de expedientes")
 # Cargar datos
 @st.cache_data
 def cargar_datos():
-    df = pd.read_csv("actualizaciones_expedientes.csv")
+    df = pd.read_csv("files/actualizaciones_expedientes.csv")
     df.columns = [col.strip().replace("  ", " ") for col in df.columns]
     df["Fecha de publicación"] = pd.to_datetime(df["Fecha de publicación"], dayfirst=True, errors="coerce")
     return df
