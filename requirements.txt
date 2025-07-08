@@ -1,4 +1,5 @@
-beautifulsoup4==4.12.3
+selenium==4.21.0   # o la versión que prefieras, ≥ 4.6 incluye Selenium-Manager
+beautifulsoup4     # ya lo necesitabas antes
 pandas
 requests
 streamlit
