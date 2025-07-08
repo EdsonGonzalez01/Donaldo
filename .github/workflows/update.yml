@@ -1,0 +1,23 @@
+name: scrape-and-update
+on:
+  schedule: [ {cron: '0 8 * * *'} ]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -r requirements.txt
+      - run: python main.py
+      - name: Commit cambios CSV
+        run: |
+          git config user.name  "gh-actions"
+          git config user.email "bot@example.com"
+          git add files/actualizaciones_expedientes*.csv
+          git diff --cached --quiet && echo "Sin cambios" || \
+            (git commit -m "auto: datos $(date -u +'%F %T') [skip ci]" && git push)
