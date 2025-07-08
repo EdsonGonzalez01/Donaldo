@@ -1,57 +1,67 @@
-name: scrape-and-update
+name: Actualiza expedientes (CSV)
 
 on:
-  schedule:
-    - cron: '0 8 * * *'        # todos los días a las 08:00 UTC
-  workflow_dispatch:           # ejecución manual si la necesitas
+  # Lánzalo de forma manual desde la pestaña “Actions”
+  workflow_dispatch:
 
-permissions:
-  contents: write              # permite hacer push al repo
+  # Ejecútalo cada día a las 02:00 UTC → 20:00 CDMX
+  schedule:
+    - cron: '0 2 * * *'
+
+  # Vuelve a correr cuando alguien haga push (excepto si el mensaje trae [skip ci])
+  push:
+    branches: [ main ]
 
 jobs:
-  run:
+  build:
+    # Evita bucles: si el último commit contiene "[skip ci]", no hagas nada
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+
+    # El token implícito de Actions necesitará permiso de escritura
+    permissions:
+      contents: write
 
     steps:
-    # 1. Clonar el repo
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0       # hace falta el historial completo para rebase
 
-    # 2. Preparar Python (v. estable con rueda de lxml)
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.12'
-        cache: 'pip'
+      - name: Configurar Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
 
-    # 3. Instalar dependencias de requirements.txt
-    - name: Instalación de dependencias
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Instalar dependencias
+        run: |
+          pip install -r requirements.txt
 
-    # 4. Ejecutar el orquestador de scrapers
-    - name: Ejecutar scrapers
-      run: python main.py
+      - name: Ejecutar scraper / orquestador
+        run: |
+          python main.py
 
-    # 5. Sincronizar rama local con la punta remota (evita non-fast-forward)
-    - name: Sincronizar con remoto
-      run: |
-        git fetch origin main
-        git rebase origin/main
+      - name: Configurar Git
+        run: |
+          git config --global user.name  "github-actions[bot]"
+          git config --global user.email "actions@github.com"
 
-    # 6. Commit + push de los CSV modificados
-    - name: Commit cambios CSV
-      run: |
-        git config user.name  "gh-actions"
-        git config user.email "bot@example.com"
+      - name: Comitear archivos generados
+        run: |
+          git add -A
+          if git diff-index --quiet HEAD --; then
+            echo "No hay cambios para comitear"
+          else
+            git commit -m "auto: datos $(date '+%Y-%m-%d %H:%M:%S') [skip ci]"
+          fi
 
-        # Añade los CSV generados/actualizados
-        git add actualizaciones_expedientes*.csv
+      - name: Rebase contra origin/main con autostash
+        run: |
+          git fetch origin main
+          git rebase --autostash origin/main
 
-        # Si hay cambios, comitea y empuja; si otro push apareció entre medias,
-        # --force-with-lease abortará en lugar de sobrescribirlo.
-        git diff --cached --quiet || \
-          (git commit -m "auto: datos $(date -u +'%F %T') [skip ci]" && \
-           git push --force-with-lease)
+      - name: Push al remoto
+        run: |
+          git push --force-with-lease
