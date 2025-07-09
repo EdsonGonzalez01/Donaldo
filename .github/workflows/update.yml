@@ -6,7 +6,7 @@ on:
 
   # Ejecútalo cada día a las 02:00 UTC → 20:00 CDMX
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 14 * * *'
 
   # Vuelve a correr cuando alguien haga push (excepto si el mensaje trae [skip ci])
   push:
