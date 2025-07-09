@@ -18,7 +18,7 @@ def limpiar_columnas(col):
                .str.lower()
                .str.normalize("NFKD")
                .str.encode("ascii", "ignore")
-               .str.decode()
+               .str.decode("ascii")
                .str.replace("  ", " ")
                .str.replace(" ", "_"))
 
@@ -52,10 +52,6 @@ df_dgej   = cargar_csv("actualizaciones_expedientes_dgej.csv",
 st.sidebar.header("🔍 Filtro de fecha")
 fecha = st.sidebar.date_input("Selecciona una fecha", value=pd.Timestamp.today())
 
-# botón para vaciar caché si hace falta ver lo último sin esperar TTL
-if st.sidebar.button("🔄 Recargar datos ahora"):
-    st.cache_data.clear()
-    st.experimental_rerun()
 
 # -------------- vistas -----------------
 def seccion(titulo, df, col_fecha, slug):
