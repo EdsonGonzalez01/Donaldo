@@ -18,10 +18,8 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
 
     runs-on: ubuntu-latest
-
-    # El token implícito de Actions necesitará permiso de escritura
     permissions:
-      contents: write
+      contents: write          # Necesario para hacer push desde el workflow
 
     steps:
       - name: Checkout repositorio
@@ -36,12 +34,10 @@ jobs:
           cache: 'pip'
 
       - name: Instalar dependencias
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Ejecutar scraper / orquestador
-        run: |
-          python main.py
+        run: python main.py
 
       - name: Configurar Git
         run: |
@@ -62,6 +58,10 @@ jobs:
           git fetch origin main
           git rebase --autostash origin/main
 
-      - name: Push al remoto
+      # 🔥 NUEVO STEP: commit vacío que obliga a Streamlit Cloud a redeplegar
+      - name: Forzar redeploy en Streamlit Cloud
         run: |
-          git push --force-with-lease
+          git commit --allow-empty -m "ci: trigger redeploy $(date '+%Y-%m-%d %H:%M:%S') [skip ci]" || true
+
+      - name: Push al remoto
+        run: git push --force-with-lease
