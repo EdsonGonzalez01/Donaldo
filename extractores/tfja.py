@@ -4,6 +4,8 @@ from pathlib import Path
 import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 import time
 import os
@@ -33,25 +35,43 @@ def extraer_datos():
     def obtener_tabla_expediente(expediente):
         try:
             driver.get("https://www.tfja.gob.mx/boletin/jurisdiccional/")
-            time.sleep(2)
 
-            input_box = driver.find_element(By.ID, "IdnumeroExp")
+            wait = WebDriverWait(driver, 10)
+
+            iframe = wait.until(
+                EC.presence_of_element_located(
+                    (By.CSS_SELECTOR, "iframe[src*='jurisdiccional']")
+                )
+            )
+            driver.switch_to.frame(iframe)
+
+            # 2) Esperar a que aparezca el input con el ID correcto
+            input_box = wait.until(
+                EC.presence_of_element_located((By.ID, "IdNumeroExp"))
+            )
             input_box.clear()
             input_box.send_keys(expediente)
 
-            boton = driver.find_element(By.ID, "btnExpediente")
-            driver.execute_script("arguments[0].click();", boton)
-            time.sleep(3)
+            # 3) Hacer clic en el botón usando WebDriverWait
+            boton = wait.until(
+                EC.element_to_be_clickable((By.ID, "btnExpediente"))
+            )
+            boton.click()
+
+            # 4) Esperar a que se renderice la tabla de resultados
+            wait.until(
+                EC.presence_of_element_located((By.ID, "tabNumExp"))
+            )
 
             soup = BeautifulSoup(driver.page_source, "html.parser")
-            tabla = soup.find("div", {"id": "tabNumExp"}).find("table")
+            tabla = soup.find("div", id="tabNumExp").find("table")
             df = pd.read_html(io.StringIO(str(tabla)))[0]
             df["Expediente"] = expediente
-            return df
 
-        except Exception as e:
-            print(f"❌ Error con expediente {expediente}: {e}")
-            return pd.DataFrame()
+        finally:
+            driver.switch_to.default_content()
+
+        return df
 
     todos_df = []
     for exp in expedientes:
