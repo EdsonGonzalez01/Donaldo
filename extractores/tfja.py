@@ -1,94 +1,64 @@
-# generar_actualizaciones.py
-
+#!/usr/bin/env python3
+# extractores/tfja.py
+import time
 from pathlib import Path
 import pandas as pd
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+import requests
 from bs4 import BeautifulSoup
-import time
-import os
-import io 
-
 
 def extraer_datos():
-    start_time = time.time()
-    script_dir = Path(__file__).resolve().parent
-    output_path = script_dir.parent / "files" / "actualizaciones_expedientes_tfja.csv"
-    expedientes_path = script_dir.parent / "files" / "expedientes_tfja.csv"
+    """
+    Extrae las actualizaciones de expedientes del TFJA y guarda:
+      - actualizaciones_expedientes_tfja.csv
+      - links_no_encontrados_tfja.csv
+    Devuelve un dict con estado, mensaje y tiempo.
+    """
+    start = time.time()
+    base_dir = Path(__file__).resolve().parent.parent / "files"
+    base_dir.mkdir(exist_ok=True)
 
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    
-    # Leer expedientes desde CSV
-    expedientes = pd.read_csv(expedientes_path).iloc[:, 0].tolist()
+    # Archivos de entrada y salida
+    in_csv = base_dir / "expedientes_tfja.csv"
+    out_csv = base_dir / "actualizaciones_expedientes_tfja.csv"
+    failures_csv = base_dir / "links_no_encontrados_tfja.csv"
 
-    expedientes = [exp.strip() for exp in expedientes if isinstance(exp, str) and exp.strip()]
+    # Leer números de expediente
+    expedientes = (
+        pd.read_csv(in_csv, header=None)
+        .iloc[:, 0]
+        .dropna()
+        .astype(str)
+        .str.strip()
+        .tolist()
+    )
 
-    options = webdriver.ChromeOptions()
-    options.add_argument("--headless")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
+    resultados = []
+    fallos = []
 
-    driver = webdriver.Chrome(options=options)
-
-    def obtener_tabla_expediente(expediente):
-        try:
-            driver.get("https://www.tfja.gob.mx/boletin/jurisdiccional/")
-
-            wait = WebDriverWait(driver, 10)
-
-            iframe = wait.until(
-                EC.presence_of_element_located(
-                    (By.CSS_SELECTOR, "iframe[src*='jurisdiccional']")
-                )
-            )
-            driver.switch_to.frame(iframe)
-
-            # 2) Esperar a que aparezca el input con el ID correcto
-            input_box = wait.until(
-                EC.presence_of_element_located((By.ID, "IdNumeroExp"))
-            )
-            input_box.clear()
-            input_box.send_keys(expediente)
-
-            # 3) Hacer clic en el botón usando WebDriverWait
-            boton = wait.until(
-                EC.element_to_be_clickable((By.ID, "btnExpediente"))
-            )
-            boton.click()
-
-            # 4) Esperar a que se renderice la tabla de resultados
-            wait.until(
-                EC.presence_of_element_located((By.ID, "tabNumExp"))
-            )
-
-            soup = BeautifulSoup(driver.page_source, "html.parser")
-            tabla = soup.find("div", id="tabNumExp").find("table")
-            df = pd.read_html(io.StringIO(str(tabla)))[0]
-            df["Expediente"] = expediente
-
-        finally:
-            driver.switch_to.default_content()
-
-        return df
-
-    todos_df = []
     for exp in expedientes:
-        # print(f"🔎 Consultando expediente: {exp}")
-        df_exp = obtener_tabla_expediente(exp)
-        if not df_exp.empty:
-            todos_df.append(df_exp)
+        url = f"https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente={exp}"
+        try:
+            resp = requests.get(url, timeout=15)
+            resp.raise_for_status()
+            soup = BeautifulSoup(resp.text, "html.parser")
+            tabla = soup.select_one("div#tabNumExp table")
+            if tabla is None:
+                raise ValueError("Tabla TFJA no encontrada")
+            df = pd.read_html(str(tabla))[0]
+            df["Expediente"] = exp
+            resultados.append(df)
+        except Exception as e:
+            fallos.append({"Expediente": exp, "URL": url, "Error": str(e)})
 
-    driver.quit()
+    # Guardar resultados
+    if resultados:
+        pd.concat(resultados, ignore_index=True).to_csv(out_csv, index=False, encoding="utf-8-sig")
+    if fallos:
+        pd.DataFrame(fallos).to_csv(failures_csv, index=False, encoding="utf-8-sig")
 
-    df_final = pd.concat(todos_df, ignore_index=True)
-    df_final.to_csv(output_path, index=False, encoding='utf-8-sig')
-
-    end_time = time.time()
-    elapsed_time = end_time - start_time
+    elapsed = time.time() - start
     return {
-        'status': 'success',
-        'message': f"Archivo generado: actualizaciones_expedientes_tfja.csv",
-        'elapsed_time': elapsed_time
+        "status": "success",
+        "message": f"TFJA: {out_csv.name}, fallos en {failures_csv.name}",
+        "time": elapsed
     }
