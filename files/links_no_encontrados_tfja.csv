@@ -6,10 +6,10 @@
 8007/22-07-02-6,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=8007/22-07-02-6,Tabla TFJA no encontrada
 3939/22-07-01-4,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=3939/22-07-01-4,Tabla TFJA no encontrada
 7427/19-07-02-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=7427/19-07-02-9,Tabla TFJA no encontrada
-2403/24-07-02-5,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=2403/24-07-02-5,Tabla TFJA no encontrada
+2403/24-07-02-5,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=2403/24-07-02-5,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Max retries exceeded with url: /boletin/jurisdiccional/?expediente=2403/24-07-02-5 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f53c7a67dd0>, 'Connection to www.tfja.gob.mx timed out. (connect timeout=15)'))"
 1564/23-07-02-7,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=1564/23-07-02-7,Tabla TFJA no encontrada
 20/2523-1-7-OL,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=20/2523-1-7-OL,Tabla TFJA no encontrada
-8985/21-07-03-5,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=8985/21-07-03-5,Tabla TFJA no encontrada
+8985/21-07-03-5,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=8985/21-07-03-5,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Max retries exceeded with url: /boletin/jurisdiccional/?expediente=8985/21-07-03-5 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f53c7e93560>, 'Connection to www.tfja.gob.mx timed out. (connect timeout=15)'))"
 636/22-07-01-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=636/22-07-01-9,Tabla TFJA no encontrada
 5564/22-07-01-7,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5564/22-07-01-7,Tabla TFJA no encontrada
 5563/22-07-02-3,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5563/22-07-02-3,Tabla TFJA no encontrada
@@ -19,10 +19,10 @@
 5559/22-07-02-7,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5559/22-07-02-7,Tabla TFJA no encontrada
 7059/21-07-02-7,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=7059/21-07-02-7,Tabla TFJA no encontrada
 7606/22-07-01-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=7606/22-07-01-9,Tabla TFJA no encontrada
-5942/23-07-02-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5942/23-07-02-9,Tabla TFJA no encontrada
+5942/23-07-02-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5942/23-07-02-9,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Max retries exceeded with url: /boletin/jurisdiccional/?expediente=5942/23-07-02-9 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f53c7ddbc50>, 'Connection to www.tfja.gob.mx timed out. (connect timeout=15)'))"
 2590/22-11-02-7,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=2590/22-11-02-7,Tabla TFJA no encontrada
 871/23-07-03-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=871/23-07-03-9,Tabla TFJA no encontrada
-4340/23-07-01-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=4340/23-07-01-9,Tabla TFJA no encontrada
+4340/23-07-01-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=4340/23-07-01-9,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Max retries exceeded with url: /boletin/jurisdiccional/?expediente=4340/23-07-01-9 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f53c7e02060>, 'Connection to www.tfja.gob.mx timed out. (connect timeout=15)'))"
 4342/23-07-03-8,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=4342/23-07-03-8,Tabla TFJA no encontrada
 4335/23-07-03-4,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=4335/23-07-03-4,Tabla TFJA no encontrada
 4341/23-07-03-2,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=4341/23-07-03-2,Tabla TFJA no encontrada
@@ -32,10 +32,10 @@
 5231/23-07-01-8,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5231/23-07-01-8,Tabla TFJA no encontrada
 5233/23-07-01-2,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5233/23-07-01-2,Tabla TFJA no encontrada
 5232/23-07-02-1,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5232/23-07-02-1,Tabla TFJA no encontrada
-5303/23-07-01-8,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5303/23-07-01-8,Tabla TFJA no encontrada
+5303/23-07-01-8,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5303/23-07-01-8,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Max retries exceeded with url: /boletin/jurisdiccional/?expediente=5303/23-07-01-8 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f53c7e485f0>, 'Connection to www.tfja.gob.mx timed out. (connect timeout=15)'))"
 1913/23-11-01-5,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=1913/23-11-01-5,Tabla TFJA no encontrada
 5775/23-07-02-4,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5775/23-07-02-4,Tabla TFJA no encontrada
-5776/23-07-02-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5776/23-07-02-9,Tabla TFJA no encontrada
+5776/23-07-02-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5776/23-07-02-9,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Max retries exceeded with url: /boletin/jurisdiccional/?expediente=5776/23-07-02-9 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f53c8791b50>, 'Connection to www.tfja.gob.mx timed out. (connect timeout=15)'))"
 6085/23-07-01-8,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=6085/23-07-01-8,Tabla TFJA no encontrada
 7926/23-07-03-8,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=7926/23-07-03-8,Tabla TFJA no encontrada
 7927/23-07-01-6,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=7927/23-07-01-6,Tabla TFJA no encontrada
@@ -45,10 +45,10 @@
 5300/23-07-03-4,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5300/23-07-03-4,Tabla TFJA no encontrada
 6535/23-07-02-6,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=6535/23-07-02-6,Tabla TFJA no encontrada
 7510/23-07-01-7,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=7510/23-07-01-7,Tabla TFJA no encontrada
-7661/23-07-03-3,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=7661/23-07-03-3,Tabla TFJA no encontrada
+7661/23-07-03-3,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=7661/23-07-03-3,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Max retries exceeded with url: /boletin/jurisdiccional/?expediente=7661/23-07-03-3 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f53c8a88530>, 'Connection to www.tfja.gob.mx timed out. (connect timeout=15)'))"
 2/24-17-09-3,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=2/24-17-09-3,Tabla TFJA no encontrada
 83/24-07-01-8,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=83/24-07-01-8,Tabla TFJA no encontrada
-224/24-07-02-5,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=224/24-07-02-5,Tabla TFJA no encontrada
+224/24-07-02-5,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=224/24-07-02-5,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Max retries exceeded with url: /boletin/jurisdiccional/?expediente=224/24-07-02-5 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f53c79b5370>, 'Connection to www.tfja.gob.mx timed out. (connect timeout=15)'))"
 2496/24-07-01-6,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=2496/24-07-01-6,Tabla TFJA no encontrada
 43/24-ERF-01-6,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=43/24-ERF-01-6,Tabla TFJA no encontrada
 277/24-50-23-1,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=277/24-50-23-1,Tabla TFJA no encontrada
@@ -58,10 +58,10 @@
 3581/24-07-02-6,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=3581/24-07-02-6,Tabla TFJA no encontrada
 3440/24-07-01-2,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=3440/24-07-01-2,Tabla TFJA no encontrada
 4597/24-07-01-8,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=4597/24-07-01-8,Tabla TFJA no encontrada
-1169/24-09-01-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=1169/24-09-01-9,Tabla TFJA no encontrada
+1169/24-09-01-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=1169/24-09-01-9,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Max retries exceeded with url: /boletin/jurisdiccional/?expediente=1169/24-09-01-9 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f53c7f679e0>, 'Connection to www.tfja.gob.mx timed out. (connect timeout=15)'))"
 5352/24-07-03-3,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5352/24-07-03-3,Tabla TFJA no encontrada
 8208/24-07-03-1,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=8208/24-07-03-1,Tabla TFJA no encontrada
-5694/24-07-02-3,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5694/24-07-02-3,Tabla TFJA no encontrada
+5694/24-07-02-3,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5694/24-07-02-3,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Max retries exceeded with url: /boletin/jurisdiccional/?expediente=5694/24-07-02-3 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f53c92df650>, 'Connection to www.tfja.gob.mx timed out. (connect timeout=15)'))"
 158/25-07-01-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=158/25-07-01-9,Tabla TFJA no encontrada
 585/24-22-01-7,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=585/24-22-01-7,Tabla TFJA no encontrada
 23811/24-17-10-1/1775/24-S1-04-06,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=23811/24-17-10-1/1775/24-S1-04-06,Tabla TFJA no encontrada
@@ -71,10 +71,10 @@
 8468/24-07-02-3,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=8468/24-07-02-3,Tabla TFJA no encontrada
 703/25-07-01-6,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=703/25-07-01-6,Tabla TFJA no encontrada
 45/25-50-23-4,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=45/25-50-23-4,Tabla TFJA no encontrada
-1228/24-18-01-2,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=1228/24-18-01-2,Tabla TFJA no encontrada
+1228/24-18-01-2,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=1228/24-18-01-2,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Max retries exceeded with url: /boletin/jurisdiccional/?expediente=1228/24-18-01-2 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f53c7f67560>, 'Connection to www.tfja.gob.mx timed out. (connect timeout=15)'))"
 1229/24-18-01-4,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=1229/24-18-01-4,Tabla TFJA no encontrada
 330/25-18-01-2,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=330/25-18-01-2,Tabla TFJA no encontrada
-331/25-18-01-1,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=331/25-18-01-1,Tabla TFJA no encontrada
+331/25-18-01-1,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=331/25-18-01-1,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Max retries exceeded with url: /boletin/jurisdiccional/?expediente=331/25-18-01-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f53c87fcd40>, 'Connection to www.tfja.gob.mx timed out. (connect timeout=15)'))"
 159/25-12-03-1,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=159/25-12-03-1,Tabla TFJA no encontrada
 663/25-07-03-4,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=663/25-07-03-4,Tabla TFJA no encontrada
 1084/25-07-02-2,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=1084/25-07-02-2,Tabla TFJA no encontrada
