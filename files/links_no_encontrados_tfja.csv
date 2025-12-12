@@ -1,6 +1,6 @@
 ﻿Expediente,URL,Error
 2929/19-11-02-2,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=2929/19-11-02-2,Tabla TFJA no encontrada
-1310/20-07-01-7,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=1310/20-07-01-7,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Read timed out. (read timeout=15)"
+1310/20-07-01-7,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=1310/20-07-01-7,Tabla TFJA no encontrada
 4521/20-06-03-6,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=4521/20-06-03-6,Tabla TFJA no encontrada
 3620/22-03-02-4,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=3620/22-03-02-4,Tabla TFJA no encontrada
 8007/22-07-02-6,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=8007/22-07-02-6,Tabla TFJA no encontrada
@@ -28,9 +28,9 @@
 4341/23-07-03-2,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=4341/23-07-03-2,Tabla TFJA no encontrada
 4338/23-07-02-4,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=4338/23-07-02-4,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Read timed out. (read timeout=15)"
 1170/24-07-02-5,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=1170/24-07-02-5,Tabla TFJA no encontrada
-5110/23-07-03-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5110/23-07-03-9,Tabla TFJA no encontrada
+5110/23-07-03-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5110/23-07-03-9,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Read timed out. (read timeout=15)"
 5231/23-07-01-8,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5231/23-07-01-8,Tabla TFJA no encontrada
-5233/23-07-01-2,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5233/23-07-01-2,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Read timed out. (read timeout=15)"
+5233/23-07-01-2,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5233/23-07-01-2,Tabla TFJA no encontrada
 5232/23-07-02-1,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5232/23-07-02-1,Tabla TFJA no encontrada
 5303/23-07-01-8,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5303/23-07-01-8,Tabla TFJA no encontrada
 1913/23-11-01-5,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=1913/23-11-01-5,Tabla TFJA no encontrada
@@ -53,7 +53,7 @@
 43/24-ERF-01-6,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=43/24-ERF-01-6,Tabla TFJA no encontrada
 277/24-50-23-1,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=277/24-50-23-1,Tabla TFJA no encontrada
 3582/24-07-02-5,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=3582/24-07-02-5,Tabla TFJA no encontrada
-3592/24-07-03-3,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=3592/24-07-03-3,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Read timed out. (read timeout=15)"
+3592/24-07-03-3,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=3592/24-07-03-3,Tabla TFJA no encontrada
 3460/24-07-02-4,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=3460/24-07-02-4,Tabla TFJA no encontrada
 3581/24-07-02-6,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=3581/24-07-02-6,Tabla TFJA no encontrada
 3440/24-07-01-2,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=3440/24-07-01-2,Tabla TFJA no encontrada
@@ -66,7 +66,7 @@
 585/24-22-01-7,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=585/24-22-01-7,Tabla TFJA no encontrada
 23811/24-17-10-1/1775/24-S1-04-06,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=23811/24-17-10-1/1775/24-S1-04-06,Tabla TFJA no encontrada
 111/24-ERF-01-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=111/24-ERF-01-9,Tabla TFJA no encontrada
-6196/24-07-01-3,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=6196/24-07-01-3,Tabla TFJA no encontrada
+6196/24-07-01-3,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=6196/24-07-01-3,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Read timed out. (read timeout=15)"
 6181/24-07-03-4,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=6181/24-07-03-4,Tabla TFJA no encontrada
 8468/24-07-02-3,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=8468/24-07-02-3,Tabla TFJA no encontrada
 703/25-07-01-6,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=703/25-07-01-6,Tabla TFJA no encontrada
