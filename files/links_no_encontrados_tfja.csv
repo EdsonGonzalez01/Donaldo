@@ -73,7 +73,7 @@
 45/25-50-23-4,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=45/25-50-23-4,Tabla TFJA no encontrada
 1228/24-18-01-2,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=1228/24-18-01-2,Tabla TFJA no encontrada
 1229/24-18-01-4,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=1229/24-18-01-4,Tabla TFJA no encontrada
-330/25-18-01-2,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=330/25-18-01-2,Tabla TFJA no encontrada
+330/25-18-01-2,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=330/25-18-01-2,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Read timed out. (read timeout=15)"
 331/25-18-01-1,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=331/25-18-01-1,Tabla TFJA no encontrada
 159/25-12-03-1,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=159/25-12-03-1,Tabla TFJA no encontrada
 663/25-07-03-4,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=663/25-07-03-4,Tabla TFJA no encontrada
