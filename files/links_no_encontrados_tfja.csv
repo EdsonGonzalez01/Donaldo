@@ -1,5 +1,5 @@
 ﻿Expediente,URL,Error
-2929/19-11-02-2,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=2929/19-11-02-2,"HTTPSConnectionPool(host='www.tfja.gob.mx', port=443): Read timed out. (read timeout=15)"
+2929/19-11-02-2,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=2929/19-11-02-2,Tabla TFJA no encontrada
 1310/20-07-01-7,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=1310/20-07-01-7,Tabla TFJA no encontrada
 4521/20-06-03-6,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=4521/20-06-03-6,Tabla TFJA no encontrada
 3620/22-03-02-4,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=3620/22-03-02-4,Tabla TFJA no encontrada
@@ -22,7 +22,7 @@
 5942/23-07-02-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=5942/23-07-02-9,Tabla TFJA no encontrada
 2590/22-11-02-7,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=2590/22-11-02-7,Tabla TFJA no encontrada
 871/23-07-03-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=871/23-07-03-9,Tabla TFJA no encontrada
-4340/23-07-01-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=4340/23-07-01-9,502 Server Error: Bad Gateway for url: https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=4340/23-07-01-9
+4340/23-07-01-9,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=4340/23-07-01-9,Tabla TFJA no encontrada
 4342/23-07-03-8,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=4342/23-07-03-8,Tabla TFJA no encontrada
 4335/23-07-03-4,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=4335/23-07-03-4,Tabla TFJA no encontrada
 4341/23-07-03-2,https://www.tfja.gob.mx/boletin/jurisdiccional/?expediente=4341/23-07-03-2,Tabla TFJA no encontrada
